@@ -68,7 +68,10 @@ namespace SantaFactory
 
         private void btnBall_Click(object sender, EventArgs e)
         {
-            ToyFactory = new BallFactory();
+            ToyFactory = new BallFactory()
+            {
+                BallColor = btnColor.BackColor
+            };
         }
 
         private void DisplayNext()
