@@ -37,6 +37,9 @@ namespace SantaFactory
             this.btnBall = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnColor = new System.Windows.Forms.Button();
+            this.btnPresent = new System.Windows.Forms.Button();
+            this.btnColorBox = new System.Windows.Forms.Button();
+            this.btnColorRibbon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -44,9 +47,9 @@ namespace SantaFactory
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Location = new System.Drawing.Point(0, 147);
+            this.mainPanel.Location = new System.Drawing.Point(0, 214);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(666, 278);
+            this.mainPanel.Size = new System.Drawing.Size(666, 211);
             this.mainPanel.TabIndex = 0;
             // 
             // createTimer
@@ -84,7 +87,7 @@ namespace SantaFactory
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(298, 13);
+            this.label1.Location = new System.Drawing.Point(483, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 3;
@@ -100,11 +103,44 @@ namespace SantaFactory
             this.btnColor.UseVisualStyleBackColor = false;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
+            // btnPresent
+            // 
+            this.btnPresent.Location = new System.Drawing.Point(297, 13);
+            this.btnPresent.Name = "btnPresent";
+            this.btnPresent.Size = new System.Drawing.Size(136, 83);
+            this.btnPresent.TabIndex = 5;
+            this.btnPresent.Text = "Present";
+            this.btnPresent.UseVisualStyleBackColor = true;
+            this.btnPresent.Click += new System.EventHandler(this.btnPresent_Click);
+            // 
+            // btnColorBox
+            // 
+            this.btnColorBox.BackColor = System.Drawing.Color.Red;
+            this.btnColorBox.Location = new System.Drawing.Point(297, 102);
+            this.btnColorBox.Name = "btnColorBox";
+            this.btnColorBox.Size = new System.Drawing.Size(136, 39);
+            this.btnColorBox.TabIndex = 6;
+            this.btnColorBox.UseVisualStyleBackColor = false;
+            this.btnColorBox.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnColorRibbon
+            // 
+            this.btnColorRibbon.BackColor = System.Drawing.Color.Yellow;
+            this.btnColorRibbon.Location = new System.Drawing.Point(297, 147);
+            this.btnColorRibbon.Name = "btnColorRibbon";
+            this.btnColorRibbon.Size = new System.Drawing.Size(136, 39);
+            this.btnColorRibbon.TabIndex = 7;
+            this.btnColorRibbon.UseVisualStyleBackColor = false;
+            this.btnColorRibbon.Click += new System.EventHandler(this.btnColor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnColorRibbon);
+            this.Controls.Add(this.btnColorBox);
+            this.Controls.Add(this.btnPresent);
             this.Controls.Add(this.btnColor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBall);
@@ -126,6 +162,9 @@ namespace SantaFactory
         private System.Windows.Forms.Button btnBall;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Button btnPresent;
+        private System.Windows.Forms.Button btnColorBox;
+        private System.Windows.Forms.Button btnColorRibbon;
     }
 }
 
