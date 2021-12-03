@@ -23,11 +23,15 @@ namespace MicroSimExample
         {
             InitializeComponent();
 
-            Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+        }
 
-            for (int year = 2005; year <= 2024; year++)
+        private void StartSimulation(int endYear, string csvPath)
+        {
+            Population = GetPopulation(csvPath);
+
+            for (int year = 2005; year <= endYear; year++)
             {
                 for (int i = 0; i < Population.Count; i++)
                 {
@@ -41,8 +45,8 @@ namespace MicroSimExample
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                Console.WriteLine(string.Format(
-                    "Év: {0}\nFiúk: {1}\nLányok: {2}\n",
+                txtMain.Text += (string.Format(
+                    "Szimulációs év: {0}\n\tFiúk: {1}\n\tLányok: {2}\n\n",
                     year,
                     nbrOfMales,
                     nbrOfFemales));
@@ -146,6 +150,23 @@ namespace MicroSimExample
             }
 
             return deathProbabilities;
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            StartSimulation((int)nudYear.Value, txtPath.Text);
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog();
+            ofd.FileName = txtPath.Text;
+            if (ofd.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            txtPath.Text = ofd.FileName;
         }
     }
 }
